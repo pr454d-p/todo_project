@@ -1,18 +1,14 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/edit.css' %}">
+{% endblock %}
 {% block body %}
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 mt-2">
-            <div class="card shadow">
-                    <div class="card-body">
-                        <form method="POST">
-                            {% csrf_token %}
-                            {{form.as_p}}
-                            <button>Update</button>
-                        </form>
-                    </div>
-            </div>
-        </div>
-    </div>
+<div class="center mt-4">
+    <form method="POST" class="shadow">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button>Update</button>
+    </form>
 </div>
 {% endblock %}

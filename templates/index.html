@@ -42,21 +42,6 @@
                 {% else %}
                     <p>No tasks found.</p>
                 {% endif %}
-
-
-                        <!-- {% for i in tasks %}
-                        <div class="card shadow">
-                                <div class="card-body">
-                                        <h6 class="card-title">{{i.title}}</h6>
-                                        <p>{{i.priority}}</p>
-                                        <p>Deadline -- {{i.date}}</p>
-                                        
-                                        <a class="btn btn-danger" href="{% url 'todoapp:delete' i.id %}">Done</a>
-                                        <a class="btn btn-warning" href="{% url 'todoapp:update' i.id %}">Update</a>
-                                </div>
-                        </div>
-                        <br>
-                        {% endfor %} -->
                 </div>
         </div>
     </div>
