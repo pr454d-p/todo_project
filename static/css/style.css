@@ -1,8 +1,109 @@
-.banner{
-    background-color: aquamarine;
+body {
+    background: linear-gradient(to bottom, white, #ff6b6b 50%, #ffa757);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+  }
+  
+.navbar-brand{
+    /* background-color: aquamarine;
     width: 100%;
     height: 100px;
-    margin-bottom: 50px;
+    margin-bottom: 50px; */
     display: grid;
     place-items: center;
 }
+input#session-date {
+    display: inline-block;
+    position: relative;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+}
+/* Set a linear gradient background for the navbar */
+.navbar {
+    background: linear-gradient(to right, #ff6b6b, #ffa757);
+  }
+  
+  /* Change the font color of the navbar links */
+  .navbar-nav a {
+    color: white; /* Use your preferred color here */
+  }
+  
+  /* Change the font color of the active link */
+  .navbar-nav .active > a {
+    color: yellow; /* Use your preferred color here */
+  }
+
+  .navbar-brand {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(238, 10, 10, 0.2);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .navbar-brand:hover {
+    transform: scale(1.1);
+    text-shadow: 2px 2px 2px rgba(241, 10, 10, 0.3);
+  }
+
+  .navbar-nav a {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-right: 20px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .navbar-nav a:hover {
+    color: #fff;
+  }
+
+  .form-label .row {
+    display: flex;
+    align-items: center;
+  }
+  
+  .form-label label {
+    margin-bottom: 0;
+    padding-right: 5px;
+    flex: 1;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .form-label input {
+    flex: 2;
+  }
+  
+
+  .todo-submit {
+    background-color: #4CAF50; /* Set background color */
+    color: white; /* Set text color */
+    border: none; /* Remove button border */
+    padding: 10px 24px; /* Add some padding */
+    cursor: pointer; /* Change cursor on hover */
+    border-radius: 5px; /* Add rounded corners */
+  }
+  
+  .todo-submit:hover {
+    background-color: #3e8e41; /* Change background color on hover */
+  }
+  

@@ -1,0 +1,65 @@
+  /* style for the login */
+
+  #login {
+    width: 400px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+#login input[type="text"],
+#login input[type="password"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#login input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#login input[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+
+.new-register {
+    display: inline-block;
+    margin-top: 20px;
+    color: #666;
+    text-decoration: none;
+}
+
+.new-register:hover {
+    text-decoration: underline;
+}
+
+
+.new-register {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .new-register:hover {
+    background-color: #0069d9;
+    color: #fff;
+  }
+  

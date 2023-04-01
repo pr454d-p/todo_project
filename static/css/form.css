@@ -1,0 +1,76 @@
+/* Style the form container */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  /* Style the form input fields */
+  .contact_input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #fff;
+  }
+  
+  /* Style the button */
+  .btn {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #3e8e41;
+  }
+  
+  /* Style the OTP input field */
+  #otp {
+    display: block;
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #fff;
+  }
+  /* Style the verify text */
+  #verify_text_div {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  /* Style the error message */
+  h6 {
+    margin-top: 10px;
+  }
+  
+  /* Style the loading spinner */
+  .fa-spinner {
+    margin-right: 10px;
+  }
+  
+  #otp_div button {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#otp_div button:hover {
+    background-color: #0069d9;
+}

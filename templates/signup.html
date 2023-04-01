@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}">
+{% endblock %}
+{% block body %}
+<form action="" id="register" class="mt-4 shadow" method="POST">
+    {% csrf_token %}
+    <input type="text" class="contact_input inpt" name="username" placeholder="Your User-name" required="required">
+    <input type="text" class="contact_input inpt" name="first-name" placeholder="Your First name" required="required">
+    <input type="text" class="contact_input inpt" name="last-name" placeholder="Your Last name" required="required">
+    <input type="email" class="contact_input inpt" id="email" name="email" placeholder="Your Email" required="required">
+    <button type="button" class="btn btn-primary" onclick="ajax_send_otp()" id="email-verification-btn">
+        <i class="fa fa-spinner fa-spin" style="display:none"></i>
+        Verify Email
+    </button>
+    <div id="verify_text_div"></div>
+    <div id="otp_div" style="display: none;" >
+        <label for="email">OTP</label>
+        <input type="text" name="otp" id="otp">
+        <button type="button"  onclick="verify_otp()">Verify</button>
+    </div>
+    <br>
+    <input type="password" class="contact_input inpt" placeholder="Your Password" name="password" required="required">
+    <input type="password" class="contact_input inpt" placeholder="Confrim Password" name="confirm-password" required="required">
+    <input type="submit" class="btn btn-primary" disabled name="sign-up" value="Sign-up">
+    {% for msg in messages %}
+    <h6 style="color: red;">{{msg}}</h6>
+    {% endfor %}
+</form>
+<script>
+    var otp_from_back="";
+    function ajax_send_otp(){
+       email = document.getElementById("email");
+       var spinner = document.querySelector('#email-verification-btn i.fa-spinner');
+       spinner.style.display = 'inline-block';
+       console.log(email.value)
+     $.post("{% url 'account:send_otp' %}",
+         {
+             "email":email.value,
+             "csrfmiddlewaretoken":"{{csrf_token}}"
+         },
+         function(data, status){
+             if(status=="success"){
+                 otp_from_back = data;
+                 document.getElementById("otp_div").style.display='block';
+                 }
+                 spinner.style.display = 'none';
+    }
+    );
+    }
+   function verify_otp(){
+       var user_otp=document.getElementById("otp").value;
+       if (user_otp==otp_from_back){
+           document.getElementById("verify_text_div").style.color="green";            
+           document.getElementById("verify_text_div").innerHTML="OTP Verified";
+           document.getElementById("otp_div").style.display="none";
+           document.getElementsByName('sign-up')[0].disabled = false;
+       }
+       else{
+           document.getElementById("verify_text_div").style.color="red";
+           document.getElementById("verify_text_div").innerHTML="Try Again!!";
+       }
+   } 
+</script>
+{% endblock %}

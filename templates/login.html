@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+{% endblock %}
+{% block body %}
+    <form action="" id="login" method="post" class="mt-4 shadow">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="User-name" required="required">
+        <input type="password" name="password" placeholder="Password" required="required">
+        <input type="submit" class="btn" value="Submit">
+        <a href="{% url 'account:signup' %}" class="new-register">Sign-up</a>
+        {% for msg in messages %}
+	    <h6 style="color: red;">{{msg}}</h6>
+		{% endfor %}
+    </form>
+{% endblock %}

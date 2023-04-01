@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/delete.css' %}">
+{% endblock %}
 {% block body %}
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <form method="POST">
                 {% csrf_token %}
                 <p>Are you sure to delete?</p>
