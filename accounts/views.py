@@ -20,7 +20,7 @@ def login(request):
             return redirect('/')
         else:
             messages.error(request,"Invalid username or Password")
-            return redirect('account/login')
+            return redirect('account:login')
     return render(request,'login.html')
 
 def logout(request):

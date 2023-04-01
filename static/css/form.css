@@ -1,11 +1,16 @@
 /* Style the form container */
 form {
-    max-width: 500px;
+    width: 500px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 15px;
     border-radius: 5px;
   }
-  
+  @media screen and (max-width: 600px) {
+    form {
+        width: 90%;
+        margin: auto;
+    }
+}
   /* Style the form input fields */
   .contact_input {
     display: block;
@@ -73,4 +78,18 @@ form {
 
 #otp_div button:hover {
     background-color: #0069d9;
+}
+.already-login {
+  display: inline-block;
+  margin-top: 20px;
+  color: #154c86;
+  text-decoration: none;
+}
+.error-box {
+  border: 1px solid red;
+  background-color: #ffe4e4;
+  color: red;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }

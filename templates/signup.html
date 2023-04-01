@@ -4,7 +4,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}">
 {% endblock %}
 {% block body %}
-<form action="" id="register" class="mt-4 shadow" method="POST">
+<form action="" id="register" class="mt-3 shadow" method="POST">
     {% csrf_token %}
     <input type="text" class="contact_input inpt" name="username" placeholder="Your User-name" required="required">
     <input type="text" class="contact_input inpt" name="first-name" placeholder="Your First name" required="required">
@@ -23,9 +23,14 @@
     <br>
     <input type="password" class="contact_input inpt" placeholder="Your Password" name="password" required="required">
     <input type="password" class="contact_input inpt" placeholder="Confrim Password" name="confirm-password" required="required">
-    <input type="submit" class="btn btn-primary" disabled name="sign-up" value="Sign-up">
+    <input type="submit" class="btn btn-primary" disabled name="sign-up" value="Sign up">
+    <p>
+        Have an account? <a href="{% url 'account:login' %}" class="already-login">Login</a>
+    </p>
     {% for msg in messages %}
-    <h6 style="color: red;">{{msg}}</h6>
+        <div class="error-box mt-2">
+            <h6>{{ msg }}</h6>
+        </div>
     {% endfor %}
 </form>
 <script>

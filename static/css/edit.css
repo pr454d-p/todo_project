@@ -5,11 +5,16 @@
 /* Styling for the form container */
 form{
     background-color: #f2f2f2;
-    width: 45%;
+    width: 400px;
     padding: 20px;
     border-radius: 10px;
   }
-  
+  @media screen and (max-width: 600px) {
+    form {
+        width: 75%;
+        margin: auto;
+    }
+}
   /* Styling for the form input fields */
 input{
     display: block;

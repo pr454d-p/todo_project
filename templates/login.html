@@ -9,9 +9,14 @@
         <input type="text" name="username" placeholder="User-name" required="required">
         <input type="password" name="password" placeholder="Password" required="required">
         <input type="submit" class="btn" value="Submit">
-        <a href="{% url 'account:signup' %}" class="new-register">Sign-up</a>
+        <p>
+            Don't have an account?
+        <a href="{% url 'account:signup' %}" class="new-register">Sign up</a></p>
         {% for msg in messages %}
-	    <h6 style="color: red;">{{msg}}</h6>
-		{% endfor %}
+        <div class="error-box mt-2">
+            <h6>{{ msg }}</h6>
+        </div>
+        {% endfor %}
+
     </form>
 {% endblock %}
