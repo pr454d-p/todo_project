@@ -14,37 +14,33 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <div class="mx-auto">
-          <a class="navbar-brand col-md-6" href="/">Todos List</a>
-        </div>
-          <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
-            <div class="d-flex">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  {% if user.is_authenticated %}
-                  <li class="nav-item">
-                    <a class="nav-link" href="{% url 'account:logout' %}">logout</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/">{{user.first_name}} {{user.last_name}}</a>
-                  </li>
-                  {% else %}
-                  <li class="nav-item">
-                    <a class="nav-link" href="{% url 'account:login' %}">Login</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{% url 'account:signup' %}">Sign up</a>
-                  </li>
-                  {% endif %}
-                </ul>
-            </div>
-          <!-- </div> -->
-        </div>
-      </nav>
+  <nav class="navbar navbar-expand-sm bg-body-tertiary">
+    <div class="container-fluid justify-content-between">
+      <a class="navbar-brand ms-2" href="/">Todos List</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse text-end" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mt-2 mb-lg-0">
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'account:logout' %}">logout</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/">{{user.first_name}} {{user.last_name}}</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'account:login' %}">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'account:signup' %}">Sign up</a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>  
     {% block body %}
     {% endblock %}
     <script src="{% static 'bootstrap-5.2.2-dist/js/bootstrap.bundle.js' %}"></script>
